@@ -41,4 +41,11 @@ public class PolicyQueryRepository {
         }
         return policy.category.contains(category);
     }
+
+    public List<Policy> findAllByAge(int currentAge) {
+        return query
+                .selectFrom(policy)
+                .where(policy.startAge.loe(currentAge), policy.endAge.goe(currentAge))
+                .fetch();
+    }
 }

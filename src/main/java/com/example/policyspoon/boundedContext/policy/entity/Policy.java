@@ -30,8 +30,8 @@ public class Policy {
     private String supportScale; // 지원 규모
     @Column(columnDefinition = "TEXT")
     private String note; // 비고
-    @Column(columnDefinition = "TEXT")
-    private String age; // 연령
+    private Integer startAge; // 시작 나이
+    private Integer endAge; // 끝 나이
     @Column(columnDefinition = "TEXT")
     private String areaIncome; // 거주지 및 소득
     @Column(columnDefinition = "TEXT")
@@ -47,21 +47,23 @@ public class Policy {
     @Column(columnDefinition = "TEXT")
     private String restrictBoundary; // 참여 제한 대상
     @Column(columnDefinition = "TEXT")
-    private String applicationProcess; // 신청 절차
-    @Column(columnDefinition = "TEXT")
-    private String judgePresentation; // 심사 및 발표
-    @Column(columnDefinition = "TEXT")
-    private String applicationSite; // 신청 사이트
-    @Column(columnDefinition = "TEXT")
-    private String submitDocument; // 제출 서류
-    @Column(columnDefinition = "TEXT")
-    private String etcInformation; // 기타 유익 정보
-    @Column(columnDefinition = "TEXT")
-    private String hostOrganization; // 주관 기관
-    @Column(columnDefinition = "TEXT")
-    private String operatingOrganization; // 운영 기관
-    @Column(columnDefinition = "TEXT")
-    private String referenceSite1; // 사업 참고 사이트 1
-    @Column(columnDefinition = "TEXT")
-    private String referenceSite2; // 사업 참고 사이트 2
+    private String url; // 상세 페이지 url
+//    @Column(columnDefinition = "TEXT")
+//    private String applicationProcess; // 신청 절차
+//    @Column(columnDefinition = "TEXT")
+//    private String judgePresentation; // 심사 및 발표
+//    @Column(columnDefinition = "TEXT")
+//    private String applicationSite; // 신청 사이트
+//    @Column(columnDefinition = "TEXT")
+//    private String submitDocument; // 제출 서류
+//    @Column(columnDefinition = "TEXT")
+//    private String etcInformation; // 기타 유익 정보
+//    @Column(columnDefinition = "TEXT")
+//    private String hostOrganization; // 주관 기관
+//    @Column(columnDefinition = "TEXT")
+//    private String operatingOrganization; // 운영 기관
+//    @Column(columnDefinition = "TEXT")
+//    private String referenceSite1; // 사업 참고 사이트 1
+//    @Column(columnDefinition = "TEXT")
+//    private String referenceSite2; // 사업 참고 사이트 2
 }
