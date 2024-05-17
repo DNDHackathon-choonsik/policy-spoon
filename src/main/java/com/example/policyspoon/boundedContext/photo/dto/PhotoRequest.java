@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @NoArgsConstructor
 @Builder
 public class PhotoRequest {
-    @Size(max = 2)
+
     private List<MultipartFile> photos;
 
     public Photo toEntity(Review review, String uploadUrl, String originName) {
