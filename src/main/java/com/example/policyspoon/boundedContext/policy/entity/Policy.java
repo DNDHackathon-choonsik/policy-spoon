@@ -17,7 +17,7 @@ public class Policy {
     @Column(length = 2000)
     private String title; // 정책 이름
     @Column(columnDefinition = "TEXT")
-    private String summary; // 정책 내용 요약
+    private String code; // 정책 번호
     @Column(columnDefinition = "TEXT")
     private String category; // 정책 분야
     @Column(columnDefinition = "TEXT")

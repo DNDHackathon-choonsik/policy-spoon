@@ -18,7 +18,7 @@ public class InitData {
             @Override
             @Transactional
             public void run(String... args) {
-                createPolicy("서울시 청년수당", "서울에 거주하고 있는 만 19세~34세 미취업 또는 단기 근로 청년에게 활동지원금(월 50만원 최대 6개월)을 지급하고, 강점진단 종합지원, 멘토링, 취업지원 프로그램 제공 등 청년 니즈에 맞게 프로그램 연계를 지속 지원하는 사업", "일자리분야", "ㅇ (금전적 지원) 매월 50만원 × 최대 6개월\n" +
+                createPolicy("서울시 청년수당", "R2024022820205", "일자리분야", "ㅇ (금전적 지원) 매월 50만원 × 최대 6개월\n" +
                         "ㅇ 사용방법\n" +
                         "- 체크카드 사용이 원칙이며, 사업 목적에 부합한 범위에서 자유롭게 사용 가능\n" +
                         "- 현금사용은 금지되며, 특정 항목에 한하여 예외적 계좌이체 허용\n" +
@@ -74,7 +74,7 @@ public class InitData {
                         "- 실업급여 수급중인 자 (신청 시점 기준)\n" +
                         "\n" +
                         "* 2024년 2월까지 구직촉진수당을 받고 3월부터는 미수령 상태라면 청년수당 신청 가능합니다.", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024022820205&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("상반기 동부기술교육원 직업교육훈련생 모집", "예비 취업준비시민의 직업능력 역량을 제고하고 서울산업 수요 맞춤형 인재를 양성", "교육분야", "□ 25개 학과 640명 모집\n" +
+                createPolicy("상반기 동부기술교육원 직업교육훈련생 모집", "R2024012219103", "교육분야", "□ 25개 학과 640명 모집\n" +
                         "※ 자세한 내용은 첨부파일 모집계획 참고\n" +
                         "\n" +
                         "□ 훈련생 지원\n" +
@@ -85,9 +85,9 @@ public class InitData {
                         "※ 만15세 이상 만34세 이하 보호시설거주청년 또는 보호가 종료된 자립준비청년은 정원 외로 선발\n" +
                         "□ 서울시에 외국인 등록된 자로 영주권 취득자 또는 배우자가 내국인인 자 및 자녀", "제한없음", "제한없음", "제한없음", "제한없음", "", "신규 입학희망자에게 교육기회 제공을 위해 최근 3년 이내 입학자의 재입학은 아래와 같이 제한됨\n" +
                         "※ 재입학 금지 대상 : 2021.1.1.~2023.12.31. 중 수강 이력이 있는 자", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024012219103&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울미래인재 모집", "새로운 서울을 설계하고 만들어나갈 미래인지 모집 및 양성", "참여.권리분야", "- 서울시에서 결정되는 중요한 정책을 자문·조정·심의·의결\n" +
+                createPolicy("서울미래인재 모집", "R2024011919045", "참여.권리분야", "- 서울시에서 결정되는 중요한 정책을 자문·조정·심의·의결\n" +
                         "- 서울 시정에 참여하고자 하는 청년들을 모집하여 시정참여활동을 더 잘할 수 있도록 역량 강화프로그램을 제공", "", "2024년 01월 01일 ~ 2024년 12월 31일", "", "20240101~20241231", 19, 39, "- 서울시에 거주 또는 서울을 기반으로 활동 중인 만 19~39세 청년", "", "", "", "", "", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024011919045&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울 안심소득 참여가구 모집", "기준소득 대비 부족한 가계소득을 지원하는 소득 보장제도", "복지.문화분야", "□ 지원내용\n" +
+                createPolicy("서울 안심소득 참여가구 모집", "R2024010818544", "복지.문화분야", "□ 지원내용\n" +
                         "○ 가구별 기준 중위소득 85% 기준액과 가구의 소득평가액 간 차액의 절반(50%)을 지원\n" +
                         "○ 1인 가구의 경우 소득이 없으면 월 최대 947,090원\n" +
                         "○ 현금 인출이 가능한 체크카드로 지원\n" +
@@ -95,28 +95,28 @@ public class InitData {
                         "○ 소득 기준 : 가구별 기준 중위소득 50% 이하\n" +
                         "○ 포함하는 소득 : 근로소득, 사업소득, 재산소득, 공적이전소득 등\n" +
                         "○ 재산 기준 : 326백만원(부채 차감) 이하", "", "", "", "", "", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024010818544&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("기후동행카드", "서울 권역 내 모든 대중교통과 따릉이 무제한 이용 가능한 대중교통 정기권", "복지.문화분야", "□ 65,000원정기권(①서울 지역 내 지하철 ②서울시 면허 시내·마을버스 ③따릉이 무제한 이용 가능)\n" +
+                createPolicy("기후동행카드", "R2024011819025", "복지.문화분야", "□ 65,000원정기권(①서울 지역 내 지하철 ②서울시 면허 시내·마을버스 ③따릉이 무제한 이용 가능)\n" +
                         "□ 62,000원정기권(①서울 지역 내 지하철 ②서울시 면허 시내·마을버스)", "시범사업 사업기간 : 2024년 1월 27일(토) ~ 6월 30일(일)", "상시", "", "□ 1월 23일부터 모바일카드 다운로드 및 실물카드 판매 시작\n" +
                         "□ 1월 27일부터 서비스 본격 시작", 0, 99, "서울 시민 누구나", "", "", "", "", "□ 이용범위: 서울지역 지하철, 서울시 면허 시내·마을버스, 따릉이\n" +
                         "□ 이용제외: 신분당선, 서울지역 외 지하철, 광역/공항버스, 타 지역 면허버스\n" +
                         "※ 버스의 경우 서울시 면허 버스는 서울지역 외에서 승하차하더라도 기후동행카드 사용가능\n" +
                         "※ 지하철의 경우 서울지역 내 역에서 승차 후 서울지역 외 역에서 하차할 경우 기후동행카드 사용불가", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024011819025&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울형 뉴딜 일자리", "일 경험 쌓고, 취업 역량도 키우는 뉴딜 일자리", "일자리분야", "□직무교육 + 일경험 제공 + 취창업 지원\n" +
+                createPolicy("서울형 뉴딜 일자리", "R2024010818567", "일자리분야", "□직무교육 + 일경험 제공 + 취창업 지원\n" +
                         "○임금 지급(서울형 생활임금 시급 11,436원)", "(근로기간)2024.4. ~ 2024.12.", "2024년 01월 08일 ~ 2024년 01월 12일", "□155개 사업장, 약 1,549명\n" +
                         "○5개 직무 분야등 (경영기획, 행정사무, 문화예술 경영, 돌봄, 교육상담, 특수분야)", "20240108~20240112", 18, 99, "□만 18세 이상 서울시민 중 근로계약 시작일 현재 실업 상태인 자", "", "", "", "", "□2024년 2~3월 중 60시간 사전 교육 진행\n" +
                         "○수료자에 한해 근로계약 체결(집합교육에 한해 교육여비 일 25,000원 지급)", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024010818567&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울시 청년동행센터", "금융문제로 어려움을 겪는 청년과 금융지식과 정보가 부족한 청년을 위해 파산,개인회생 등 공적채무조정지원 및 공공재무상담, 복지서비스 연계까지 맞춤형 통합서비스 제공", "복지.문화분야", "공적채무조정지원(개인회생,파산면책), 공공재무상담, 주거 및 일자리 복지서비스 연계\n" +
+                createPolicy("서울시 청년동행센터", "R2024021519647", "복지.문화분야", "공적채무조정지원(개인회생,파산면책), 공공재무상담, 주거 및 일자리 복지서비스 연계\n" +
                         "1. 부채문제로 막막한 청년이라면? - 청년 채무상담 : 개인회생·파산·워크아웃 등 맞춤형 채무조정 상담 * 요건 충족 시 무료 법률지원\n" +
                         "2. 나에게 꼭 맞는 돈 관리가 필요하다면? - 청년 재무코칭 : 1:1 맞춤형 재무상담\n" +
                         "3. 청년을 위한 복지서비스가 궁금하다면? - 주거, 일자리, 심리 등 복지정보 제공 및 연계", "", "상시", "", "", 19, 39, "", "제한없음", "제한없음", "제한없음", "제한없음", "※ 악성부채 채무조정상담, 공공재무상담, 일자리·주거·심리 등 복지서비스 연계 - 모든 상담비용 무료", "제한없음", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024021519647&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울시 청년안심주택(공공지원민간임대) 임대보증금 지원", "대중교통이 편리한 역세권 및 간선도로변에 청년, 신혼부부의 주거안정 및 주거난 해소를 위해 시세대비 저렴한 공공임대와 민간임대 주택을 제공", "주거분야", "- 임차보증금의 30% 무이자 지원(청년 : 최대 4,500만원, 신혼부부 : 최대 6,000만원)\n" +
+                createPolicy("서울시 청년안심주택(공공지원민간임대) 임대보증금 지원", "R2024031920824", "주거분야", "- 임차보증금의 30% 무이자 지원(청년 : 최대 4,500만원, 신혼부부 : 최대 6,000만원)\n" +
                         "* 임차보증금이 1억원 이하인 경우 50% 무이자 지원(청년 및 신혼부부 : 최대 4,500만원)", "", "상시", "", "신규 입주(예정)일 3주 전까지 방문신청(평일 10:00 ~15:00 점심시간 없이 운영)", 19, 39, "○ 소득기준(2024년 3월 1일 이후 접수자 기준)\n" +
                         "- 청년 : 신청자 본인(1인 가구) 소득 기준 전년도 도시근로자 가구원수별 가구당 월평균 100%이하(3,482,296원)\n" +
                         "- 신혼부부 : 신호부부 및 자녀 합산 소득 기준 전년도 도시근로자 가구원수별 가구당 월평균 소득 120%이하(2인가구:6,498,854원 / 3인가구:8.638.379원)\n" +
                         "○ 자산기준\n" +
                         "- 청년 : 신청자 본인 자산 기준 2억 7,300만원 이하\n" +
                         "- 신혼부부 : 신혼부부 및 자녀 합산 자산 기준 3억 4,500만원 이하", "제한없음", "제한없음", "제한없음", "제한없음", "", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024031920824&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울시 취업날개서비스 운영", "청년실업률 증가와 취업준비 기간 장기화로 구직과정에서 과중한 경제적 부담을 겪고 있는 청년들을 지원하기 위해 면접정장 무료대여 취업날개서비스 추진", "일자리분야", "면접용 정장 무료대여", "2024.01.01~2024.12.31", "2024년 01월 01일 ~ 2024년 12월 31일", "48,000명", "2024.01.01~2024.12.31", 15, 39, "", "제한없음", "제한없음", "제한없음", "제한없음", "대여업체 문의가능 연락처\n" +
+                createPolicy("서울시 취업날개서비스 운영", "R2024030420294", "일자리분야", "면접용 정장 무료대여", "2024.01.01~2024.12.31", "2024년 01월 01일 ~ 2024년 12월 31일", "48,000명", "2024.01.01~2024.12.31", 15, 39, "", "제한없음", "제한없음", "제한없음", "제한없음", "대여업체 문의가능 연락처\n" +
                         "- 드림윙즈(홍대점) 마포구 동교동 161-5, 3층(홍대입구역 1번출구 도보 1분) 02-547-4782\n" +
                         "- 마이스윗인터뷰(신촌점) 서대문구 신촌로 87-8, 3~4층(신촌역 1번출구 도보 1분) 070-8160-3010\n" +
                         "- 마이스윗인터뷰(사당점) 관악구 승방6길 34, 1층(사당역 5번출구 도보 5분) 02-522-3010\n" +
@@ -133,7 +133,7 @@ public class InitData {
                         "- 종로신사(종로점) 종로구 종로 223, 우교빌딩 4층(종로5가역 3번 출구 도보 1분) 02-743-1850\n" +
                         "(* 24년 개관)", "- 실제 회사 면접에 참여하는 경우만 대여 인정(대학원 면접 또는 모의면접에 참여할 경우 불인정)\n" +
                         "- 증빙서류가 없는 경우 대여 불가, 대여시 증빙서류 지참", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024030420294&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("청년 임차보증금 이자지원", "서울시에서는 청년들의 더 나은 주거환경과 소득 대비 높은 주거비 부담을 완화하기 위해 청년 임차보증금 이자지원을 제공합니다.", "주거분야", "○ 대출한도\n" +
+                createPolicy("청년 임차보증금 이자지원", "R2024032020863", "주거분야", "○ 대출한도\n" +
                         "- 최대 2억원(임차보증금의 90% 이내, 대출한도 최대 2억원은 2023.5.2 대출 신청 건부터 적용됨)\n" +
                         "\n" +
                         "○ 지원금리\n" +
@@ -156,10 +156,7 @@ public class InitData {
                         "- 서울시 관내에 위치한 주택 또는 주거용 오피스텔로서, 임차보증금 3억원 이하, 월세 70만원 이하의 전월세계약\n" +
                         "- 건축물대장상 주택이 아닌 곳과 불법건축물, 다중 주택, 공공임대주택은 지원 불가", "제한없음", "제한없음", "1) 근로청년: 현재 근로 중인 자\n" +
                         "2) 취업준비생 등: 현재 근로중이 아니면서, 과거 근로기간의 총합이 1년이상 있거나, 부모 연소득이 7천만원 이하인 자", "제한없음", "", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024032020863&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울시 청년 자립토대 지원사업", "개인회생 청년의 경제적 재기지원 및 재무역량강화를 위한 지원사업\n" +
-                        "- 코로나19 이후 청년층의 가계부채 증가와 재무건전성 악화로 개인회생 신청이 증가하는 상황에서 금융취약 청년층의 재도산을 예방하고,\n" +
-                        "신속한 경제적 재기를 지원하기 위한 사업\n" +
-                        "- 청년 자립토대 지원사업 참가자에게는 ‘재무역량 강화를 위한 맞춤형 프로그램’과 ‘자립토대 지원금’ 100만원 제공", "복지.문화분야", "금융역량강화를 위한 온라인 금융교육 2회, 1:1 맞춤형 상담 3회, 자립토대지원금 100만원(50만원X2회) 지원\n" +
+                createPolicy("서울시 청년 자립토대 지원사업", "R2024031820770", "복지.문화분야", "금융역량강화를 위한 온라인 금융교육 2회, 1:1 맞춤형 상담 3회, 자립토대지원금 100만원(50만원X2회) 지원\n" +
                         "\n" +
                         "○ (재무역량 강화 맞춤형 프로그램) 교육 및 맞춤형 상담\n" +
                         "- 재무역량 강화를 위한 금융교육 2회\n" +
@@ -172,7 +169,7 @@ public class InitData {
                         "- (소득) 중위소득 140% 이내\n" +
                         "- (회생여부) 개인회생중으로 3개월 이내 변제완료 예정 또는 1년 이내 면책결정을 받은 자\n" +
                         "- (취업) 신청일 기준 근로중인 자", "제한없음", "제한없음", "근로중인 청년", "제한없음", "", "미취업자, 취업예정자, 개인회생 3회 이상 미납자, 서울시복지재단 청년통장 참가중인자(사업 종료 후 신청가능), 중위소득 140% 초과 청년", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024031820770&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
-                createPolicy("서울청년문화패스", "사회에 첫 발을 내딛는 20세~23세 청년들에게 연극, 뮤지컬, 클래식·오페라, 발레·무용, 국악, 전시 관람 기회를 제공하고 문화예술분야 활성화를 위해 문화이용권을 지원하는 사업", "복지.문화분야", "공연과 전시 관람에 사용할 수 있는 1인당 연간 20만원 상당의 문화이용권(카드) 지급\n" +
+                createPolicy("서울청년문화패스", "R2024032521041", "복지.문화분야", "공연과 전시 관람에 사용할 수 있는 1인당 연간 20만원 상당의 문화이용권(카드) 지급\n" +
                         "- 카드 발급일로부터 2024.12.31.까지\n" +
                         "* 예매 이용률과 예산 한도를 고려하여 조기마감 될 수 있음", "", "2024년 03월 28일 ~ 2024년 04월 17일", "30,000명\n" +
                         "20~23세 서울특별시 거주 청년", "2024. 3. 28.(목) ~ 4. 17.(수)", 20, 23, "\t□ 나 이 : 20~23세\n" +
@@ -191,7 +188,7 @@ public class InitData {
                         "※ 콜센터는 평일 업무시간(9~12시 / 13~18시)에 이용 가능", "", "https://www.youthcenter.go.kr/youngPlcyUnif/youngPlcyUnifDtl.do?pageIndex=1&frameYn=&bizId=R2024032521041&dtlOpenYn=&plcyTpOpenTy=&srchWord=&srchRegion=003002001&srchAge=&trgtJynEmp=&trgtJynEmp=&srchSortOrder=1&pageUnit=12");
             }
 
-            public Policy createPolicy(String title, String summary, String category, String supportDetail,
+            public Policy createPolicy(String title, String code, String category, String supportDetail,
                                        String operationPeriod, String applyPeriod, String supportScale,
                                        String note, Integer startAge, Integer endAge, String areaIncome,
                                        String education, String major, String employmentStatus,
@@ -199,7 +196,7 @@ public class InitData {
                                        String url) {
                 Policy policy = Policy.builder()
                         .title(title)
-                        .summary(summary)
+                        .code(code)
                         .category(category)
                         .supportDetail(supportDetail)
                         .operationPeriod(operationPeriod)
