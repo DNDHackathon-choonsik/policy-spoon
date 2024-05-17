@@ -31,16 +31,16 @@ public class PhotoController {
     private final PhotoService photoService;
 
     @PostMapping
-    public ResponseEntity<Result> save(@PathVariable Long processId, @AuthenticationPrincipal User user,
+    public ResponseEntity<Result> save(@PathVariable Long reviewId, @AuthenticationPrincipal User user,
                                        @Valid PhotoRequest dto) throws IOException {
         List<PhotoResponse> response = PhotoResponse.of(
-                photoService.save(processId, user.getId(), dto));
+                photoService.save(reviewId, user.getId(), dto));
 
         return ResponseEntity.ok(Result.of(response));
     }
 
     @GetMapping("/{photoId}")
-    public ResponseEntity<Result> findById(@PathVariable Long processId, @PathVariable Long photoId) {
+    public ResponseEntity<Result> findById(@PathVariable Long reviewId, @PathVariable Long photoId) {
         PhotoResponse response = PhotoResponse.of(photoService.findById(photoId));
 
         return ResponseEntity.ok(Result.of(response));
