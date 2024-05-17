@@ -20,8 +20,8 @@ public class PolicyController {
     private final PolicyService policyService;
 
     @GetMapping
-    public ResponseEntity<Result> findAllByCategory(@RequestParam String category) {
-        List<Policy> response = policyService.findAllByCategoryContaining(category);
+    public ResponseEntity<Result> findAllByCategory(@RequestParam(defaultValue = "") String category, @RequestParam(defaultValue = "") String title) {
+        List<Policy> response = policyService.findAllByCategoryContaining(category, title);
 
         return ResponseEntity.ok(Result.of(response));
     }
