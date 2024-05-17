@@ -17,10 +17,13 @@ public class ReviewQueryRepository {
 
     private final JPAQueryFactory query;
 
-    public List<Review> findAllByUserId(Long userId) {
+    public List<Review> findAllByUserIdAndCategory(Long userId, String category) {
         return query
                 .selectFrom(review)
-                .where(review.writer.id.eq(userId))
+                .where(
+                        review.writer.id.eq(userId)
+                                .and(review.category.eq(category))
+                )
                 .orderBy(review.id.desc())
                 .fetch();
     }

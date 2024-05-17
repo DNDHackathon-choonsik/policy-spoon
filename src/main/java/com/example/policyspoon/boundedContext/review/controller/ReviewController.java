@@ -59,9 +59,10 @@ public class ReviewController {
     }
 
     @GetMapping("/list")
-    public ResponseEntity<Result> findReviewList(@AuthenticationPrincipal User user) {
+    public ResponseEntity<Result> findReviewList(@AuthenticationPrincipal User user,
+                                                 @RequestParam(name = "category", required = false, defaultValue = "") String category) {
 
-        List<ReviewTitleResponse> response = reviewService.findReviewList(user.getId());
+        List<ReviewTitleResponse> response = reviewService.findReviewList(user.getId(), category);
 
         return ResponseEntity.ok(Result.of(response));
     }

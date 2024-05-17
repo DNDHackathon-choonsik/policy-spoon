@@ -2,6 +2,7 @@ package com.example.policyspoon.boundedContext.review.entity;
 
 import com.example.policyspoon.base.entity.BaseEntity;
 import com.example.policyspoon.boundedContext.photo.entity.Photo;
+import com.example.policyspoon.boundedContext.supply.entity.Supply;
 import com.example.policyspoon.boundedContext.user.entity.User;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -42,9 +43,9 @@ public class Review extends BaseEntity {
     @Column(name ="category")
     private String category;
 
-    @NotBlank
-    @Column(name ="supplies")
-    private String supplies;
+    @Builder.Default
+    @OneToMany(mappedBy = "review",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private List<Supply> supplies = new ArrayList<>();
 
     @Builder.Default
     @OneToMany(mappedBy = "review",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
@@ -60,10 +61,6 @@ public class Review extends BaseEntity {
 
     public void updateContent(String content) {
         this.content = content;
-    }
-
-    public void updateSupplies(String supplies) {
-        this.supplies = supplies;
     }
 
 }
