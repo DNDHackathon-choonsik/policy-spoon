@@ -1,6 +1,7 @@
 package com.example.policyspoon.boundedContext.review.dto;
 
 import com.example.policyspoon.boundedContext.review.entity.Review;
+import com.example.policyspoon.boundedContext.supply.dto.SuppliesResponse;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -21,10 +22,18 @@ public class ReviewResponse {
     private String policyTitle;
     private String content;
     private String writer;
-    private String supplies;
+    private List<SuppliesResponse> supplies;
     private String category;
 
     public static ReviewResponse of(Review review) {
+
+        List<SuppliesResponse> supplies = review.getSupplies().stream()
+                .map(supply -> SuppliesResponse.builder()
+                        .id(supply.getId())
+                        .supplies(supply.getSupplies())
+                        .build())
+                .toList();
+
         return ReviewResponse.builder()
                 .id(review.getId())
                 .createdDate(review.getCreatedDate())
@@ -33,7 +42,7 @@ public class ReviewResponse {
                 .policyTitle(review.getPolicyTitle())
                 .content(review.getContent())
                 .writer(review.getWriter().getNickname())
-                .supplies(review.getSupplies())
+                .supplies(supplies)
                 .category(review.getCategory())
                 .build();
     }
@@ -44,4 +53,5 @@ public class ReviewResponse {
                 .map(ReviewResponse::of)
                 .toList();
     }
+
 }

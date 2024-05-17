@@ -41,7 +41,6 @@ public class ReviewService {
                 .policyTitle(request.getPolicyTitle())
                 .content(request.getContent())
                 .category(request.getCategory())
-                .supplies(request.getSupplies())
                 .writer(writer)
                 .build();
 
@@ -96,9 +95,6 @@ public class ReviewService {
         if (dto.hasContent()) {
             review.updateContent(dto.getContent());
         }
-        if (dto.hasSupplies()) {
-            review.updateSupplies(dto.getSupplies());
-        }
     }
 
     @Transactional
@@ -119,10 +115,10 @@ public class ReviewService {
         return ReviewResponse.of(review);
     }
 
-    public List<ReviewTitleResponse> findReviewList(Long userId) {
+    public List<ReviewTitleResponse> findReviewList(Long userId, String category) {
         User currentUser = CurrentUser(userId);
 
-        return ReviewTitleResponse.of(reviewQueryRepository.findAllByUserId(currentUser.getId()));
+        return ReviewTitleResponse.of(reviewQueryRepository.findAllByUserIdAndCategory(currentUser.getId(), category));
     }
 
     public List<ReviewTitleResponse> findAllOfReviews(String title, Long userId) {

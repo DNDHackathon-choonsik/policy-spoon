@@ -24,8 +24,6 @@ public class ReviewRequest {
     @NotBlank
     private String content;
 
-    private String supplies;
-
     @NotBlank
     private String category;
 }

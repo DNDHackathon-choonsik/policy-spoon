@@ -11,7 +11,6 @@ import lombok.Getter;
 public class ReviewUpdateRequest {
     private String reviewTitle;
     private String content;
-    private String supplies;
 
     public boolean hasReviewTitle() {
         return reviewTitle != null;
@@ -21,7 +20,4 @@ public class ReviewUpdateRequest {
         return content != null;
     }
 
-    public boolean hasSupplies() {
-        return supplies != null;
-    }
 }
