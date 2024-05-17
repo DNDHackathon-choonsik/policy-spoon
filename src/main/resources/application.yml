@@ -1,0 +1,26 @@
+server:
+  port: 4321
+
+spring:
+  profiles:
+    active: sec
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        validator:
+          apply_to_ddl: false
+        format_sql: true
+        use_sql_comments: true
+    database: mysql
+
+# hibernate logging
+logging:
+  level:
+    p6spy: info
+    org:
+      springframework:
+        security: DEBUG
