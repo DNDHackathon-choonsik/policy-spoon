@@ -28,7 +28,7 @@ public class SecurityConfig {
 
     private final String[] COMMON_WHITE_LIST = new String[]
             {
-                    "/login/**", "/oauth2/**", "/error/**", "/ws/**", "/favicon.ico/**"
+                    "/login/**", "/oauth2/**", "/error/**", "/ws/**", "/favicon.ico/**", "/swagger-ui/**", "/v3/api-docs/**"
             };
     private final String[] GET_WHITE_LIST = new String[]
             {
