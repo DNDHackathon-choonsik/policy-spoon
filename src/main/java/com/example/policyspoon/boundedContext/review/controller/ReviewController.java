@@ -12,6 +12,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
@@ -79,6 +81,19 @@ public class ReviewController {
                                                  @AuthenticationPrincipal User user) {
 
         ReviewDeleteResponse response = reviewService.deleteReview(reviewId, user.getId());
+
+        return ResponseEntity.ok(Result.of(response));
+    }
+
+    @GetMapping("/searching")
+    public ResponseEntity<Result> findAll(
+            @RequestParam(name = "keyword", required = false, defaultValue = "") String keyword,
+            @AuthenticationPrincipal User user) {
+
+        List<ReviewTitleResponse> reviews = reviewService.findAllOfReviews(keyword, user.getId());
+
+        List<Object> response = new ArrayList<>();
+        response.addAll(reviews);
 
         return ResponseEntity.ok(Result.of(response));
     }

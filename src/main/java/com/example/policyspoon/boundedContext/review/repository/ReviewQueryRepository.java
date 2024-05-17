@@ -25,4 +25,14 @@ public class ReviewQueryRepository {
                 .fetch();
     }
 
+    public List<Review> findAll(String keyword, Long userId) {
+        return query
+                .selectFrom(review)
+                .where(
+                        review.writer.id.eq(userId)
+                                .and(review.policyTitle.like("%" + keyword + "%"))
+                )
+                .orderBy(review.id.desc())
+                .fetch();
+    }
 }

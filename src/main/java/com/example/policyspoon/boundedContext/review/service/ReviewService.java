@@ -123,4 +123,12 @@ public class ReviewService {
 
         return ReviewTitleResponse.of(reviewQueryRepository.findAllByUserId(currentUser.getId()));
     }
+
+    public List<ReviewTitleResponse> findAllOfReviews(String keyword, Long userId) {
+        List<Review> consultations = reviewQueryRepository.findAll(keyword, userId);
+
+        return consultations.stream()
+                .map(ReviewTitleResponse::of)
+                .toList();
+    }
 }
