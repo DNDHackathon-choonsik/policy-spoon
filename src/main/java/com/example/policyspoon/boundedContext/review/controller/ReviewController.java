@@ -51,7 +51,7 @@ public class ReviewController {
     public ResponseEntity<Result> findReview(@PathVariable Long reviewId,
                                                @AuthenticationPrincipal User user) {
 
-        List<ReviewResponse> response = reviewService.findReview(reviewId, user.getId());
+        ReviewResponse response = reviewService.findReview(reviewId, user.getId());
 
         return ResponseEntity.ok(Result.of(response));
     }
