@@ -2,6 +2,8 @@ package com.example.policyspoon.boundedContext.review.entity;
 
 import com.example.policyspoon.base.entity.BaseEntity;
 import com.example.policyspoon.boundedContext.photo.entity.Photo;
+import com.example.policyspoon.boundedContext.user.entity.User;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -46,5 +48,22 @@ public class Review extends BaseEntity {
 
     @Builder.Default
     @OneToMany(mappedBy = "review",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private List<Photo> reviews = new ArrayList<>();
+    private List<Photo> photos = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User writer;
+
+    public void updateReviewTitle(String reviewTitle) {
+        this.reviewTitle = reviewTitle;
+    }
+
+    public void updateContent(String content) {
+        this.content = content;
+    }
+
+    public void updateSupplies(String supplies) {
+        this.supplies = supplies;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.example.policyspoon.boundedContext.comment.entity;
 
 import com.example.policyspoon.base.entity.BaseEntity;
 import com.example.policyspoon.boundedContext.review.entity.Review;
+import com.example.policyspoon.boundedContext.user.entity.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -38,7 +39,7 @@ public class Comment extends BaseEntity {
     @JoinColumn(name = "review_id")
     private Review post;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id")
-//    private User writer;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User writer;
 }
