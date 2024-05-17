@@ -97,25 +97,18 @@ public class ReviewService {
 
     @Transactional
     public ReviewResponse findReview(Long reviewId, Long userId) {
-        User user = CurrentUser(userId);
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND));
-
-        if (review.getWriter() != user) {
-            throw new CustomException(NO_PERMISSION);
-        }
 
         return ReviewResponse.of(review);
     }
 
-    public List<ReviewTitleResponse> findReviewList(Long userId, String category) {
-        User currentUser = CurrentUser(userId);
-
-        return ReviewTitleResponse.of(reviewQueryRepository.findAllByUserIdAndCategory(currentUser.getId(), category));
+    public List<ReviewTitleResponse> findReviewList(String category) {
+        return ReviewTitleResponse.of(reviewQueryRepository.findAllByCategory(category));
     }
 
-    public List<ReviewTitleResponse> findAllOfReviews(String title, Long userId) {
-        List<Review> consultations = reviewQueryRepository.findAll(title, userId);
+    public List<ReviewTitleResponse> findAllOfReviews(String title) {
+        List<Review> consultations = reviewQueryRepository.findAll(title);
 
         return consultations.stream()
                 .map(ReviewTitleResponse::of)

@@ -17,23 +17,21 @@ public class ReviewQueryRepository {
 
     private final JPAQueryFactory query;
 
-    public List<Review> findAllByUserIdAndCategory(Long userId, String category) {
+    public List<Review> findAllByCategory(String category) {
         return query
                 .selectFrom(review)
                 .where(
-                        review.writer.id.eq(userId)
-                                .and(review.category.eq(category))
+                        review.category.eq(category)
                 )
                 .orderBy(review.id.desc())
                 .fetch();
     }
 
-    public List<Review> findAll(String title, Long userId) {
+    public List<Review> findAll(String title) {
         return query
                 .selectFrom(review)
                 .where(
-                        review.writer.id.eq(userId)
-                                .and(review.policyTitle.like("%" + title + "%"))
+                        review.policyTitle.like("%" + title + "%")
                 )
                 .orderBy(review.id.desc())
                 .fetch();

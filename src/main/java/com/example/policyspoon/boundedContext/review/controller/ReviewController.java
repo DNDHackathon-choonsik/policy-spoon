@@ -62,7 +62,7 @@ public class ReviewController {
     public ResponseEntity<Result> findReviewList(@AuthenticationPrincipal User user,
                                                  @RequestParam(name = "category", required = false, defaultValue = "") String category) {
 
-        List<ReviewTitleResponse> response = reviewService.findReviewList(user.getId(), category);
+        List<ReviewTitleResponse> response = reviewService.findReviewList(category);
 
         return ResponseEntity.ok(Result.of(response));
     }
@@ -91,7 +91,7 @@ public class ReviewController {
             @RequestParam(name = "title", required = false, defaultValue = "") String title,
             @AuthenticationPrincipal User user) {
 
-        List<ReviewTitleResponse> reviews = reviewService.findAllOfReviews(title, user.getId());
+        List<ReviewTitleResponse> reviews = reviewService.findAllOfReviews(title);
 
         List<Object> response = new ArrayList<>();
         response.addAll(reviews);
