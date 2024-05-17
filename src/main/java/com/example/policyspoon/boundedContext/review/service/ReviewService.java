@@ -34,8 +34,6 @@ public class ReviewService {
         User writer = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND, "userId="+userId));
 
-        writer.setPoint(writer.getPoint() + 3);
-
         Review review = Review.builder()
                 .reviewTitle(request.getReviewTitle())
                 .policyTitle(request.getPolicyTitle())
@@ -106,11 +104,6 @@ public class ReviewService {
         if (review.getWriter() != user) {
             throw new CustomException(NO_PERMISSION);
         }
-
-        if(user.getPoint() <= 0) {
-            throw new CustomException(NO_PERMISSION);
-        }
-        user.setPoint(user.getPoint() - 1);
 
         return ReviewResponse.of(review);
     }
