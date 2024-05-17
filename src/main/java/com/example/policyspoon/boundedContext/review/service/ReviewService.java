@@ -34,6 +34,8 @@ public class ReviewService {
         User writer = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND, "userId="+userId));
 
+        writer.setPoint(writer.getPoint() + 3);
+
         Review review = Review.builder()
                 .reviewTitle(request.getReviewTitle())
                 .policyTitle(request.getPolicyTitle())
@@ -42,6 +44,8 @@ public class ReviewService {
                 .supplies(request.getSupplies())
                 .writer(writer)
                 .build();
+
+
 
         return reviewRepository.save(review);
     }
@@ -97,7 +101,7 @@ public class ReviewService {
         }
     }
 
-    public List<ReviewResponse> findReview(Long reviewId, Long userId) {
+    public ReviewResponse findReview(Long reviewId, Long userId) {
         User user = CurrentUser(userId);
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND));
@@ -106,7 +110,12 @@ public class ReviewService {
             throw new CustomException(NO_PERMISSION);
         }
 
-        return ReviewResponse.of(reviewQueryRepository.findAllById(reviewId));
+        if(user.getPoint() <= 0) {
+            throw new CustomException(NO_PERMISSION);
+        }
+        user.setPoint(user.getPoint() - 1);
+
+        return ReviewResponse.of(review);
     }
 
     public List<ReviewTitleResponse> findReviewList(Long userId) {

@@ -25,12 +25,4 @@ public class ReviewQueryRepository {
                 .fetch();
     }
 
-    public List<Review> findAllById(Long reviewId) {
-        return query
-                .selectFrom(review)
-                .where(review.id.eq(reviewId))
-                .orderBy(review.id.desc())
-                .fetch();
-    }
-
 }
