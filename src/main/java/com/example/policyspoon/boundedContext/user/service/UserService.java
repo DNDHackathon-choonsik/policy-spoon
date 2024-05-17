@@ -64,7 +64,7 @@ public class UserService {
         User user = User.builder()
                 .email(email)
                 .nickname(name)
-                .point(20)
+                .point(5)
                 .build();
 
         return userRepository.save(user);
