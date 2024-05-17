@@ -32,7 +32,7 @@ public class Supply extends BaseEntity {
     @Column(name = "review_supply_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @Setter
     @JoinColumn(name = "review_id")
     private Review review;

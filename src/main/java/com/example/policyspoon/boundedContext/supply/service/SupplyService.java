@@ -11,6 +11,8 @@ import com.example.policyspoon.boundedContext.supply.repository.SupplyQueryRepos
 import com.example.policyspoon.boundedContext.supply.repository.SupplyRepository;
 import com.example.policyspoon.boundedContext.user.entity.User;
 import com.example.policyspoon.boundedContext.user.repository.UserRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
@@ -27,7 +29,7 @@ public class SupplyService {
     private final SupplyQueryRepository supplyQueryRepository;
 
     @Transactional
-    public SuppliesResponse saveSupplies(SuppliesRequest dto, Long reviewId, Long userId) {
+    public List<SuppliesResponse> saveSupplies(SuppliesRequest dto, Long reviewId, Long userId) {
 
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(ErrorCode.DATA_NOT_FOUND));
@@ -35,9 +37,14 @@ public class SupplyService {
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new CustomException(ErrorCode.DATA_NOT_FOUND));
 
-        Supply supply = dto.toEntity(review, user);
+        List<Supply> supply = dto.toEntity(review, user);
 
-        return SuppliesResponse.of(supplyRepository.save(supply));
+        List<Supply> array = new ArrayList<>();
+        for (Supply save : supply) {
+            array.add(supplyRepository.save(save));
+        }
+
+        return SuppliesResponse.of(array);
     }
 
     public List<Supply> findAllSupplies(Long reviewId, Long userId) {
@@ -45,27 +52,12 @@ public class SupplyService {
     }
 
     @Transactional
-    public SuppliesResponse updateSupplies(SuppliesRequest dto, Long supplyId, Long userId) {
-
-
+    public List<SuppliesResponse> updateSupplies(SuppliesRequest dto, Long reviewId, Long userId) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(ErrorCode.DATA_NOT_FOUND));
 
-        Supply supply = supplyRepository.findById(supplyId)
-                .orElseThrow(() -> new CustomException(ErrorCode.DATA_NOT_FOUND));
+        supplyRepository.deleteAllByReviewId(reviewId);
 
-        if (supply.getWriter() != user) {
-            throw new CustomException(ErrorCode.DATA_NOT_FOUND);
-        }
-
-        updateEachSubjectsItem(dto, supply);
-
-        return SuppliesResponse.of(supply);
-    }
-
-    private void updateEachSubjectsItem(SuppliesRequest dto, Supply supplies) {
-        if (dto.hasSupplies()) {
-            supplies.updateSupplies(dto.getSupplies());
-        }
+        return saveSupplies(dto, reviewId, userId);
     }
 }
