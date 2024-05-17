@@ -34,8 +34,6 @@ public class ReviewService {
         User writer = userRepository.findById(userId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND, "userId="+userId));
 
-        writer.setPoint(writer.getPoint() + 3);
-
         Review review = Review.builder()
                 .reviewTitle(request.getReviewTitle())
                 .policyTitle(request.getPolicyTitle())
@@ -99,30 +97,18 @@ public class ReviewService {
 
     @Transactional
     public ReviewResponse findReview(Long reviewId, Long userId) {
-        User user = CurrentUser(userId);
         Review review = reviewRepository.findById(reviewId)
                 .orElseThrow(() -> new CustomException(DATA_NOT_FOUND));
-
-        if (review.getWriter() != user) {
-            throw new CustomException(NO_PERMISSION);
-        }
-
-        if(user.getPoint() <= 0) {
-            throw new CustomException(NO_PERMISSION);
-        }
-        user.setPoint(user.getPoint() - 1);
 
         return ReviewResponse.of(review);
     }
 
-    public List<ReviewTitleResponse> findReviewList(Long userId, String category) {
-        User currentUser = CurrentUser(userId);
-
-        return ReviewTitleResponse.of(reviewQueryRepository.findAllByUserIdAndCategory(currentUser.getId(), category));
+    public List<ReviewTitleResponse> findReviewList(String category) {
+        return ReviewTitleResponse.of(reviewQueryRepository.findAllByCategory(category));
     }
 
-    public List<ReviewTitleResponse> findAllOfReviews(String title, Long userId) {
-        List<Review> consultations = reviewQueryRepository.findAll(title, userId);
+    public List<ReviewTitleResponse> findAllOfReviews(String title) {
+        List<Review> consultations = reviewQueryRepository.findAll(title);
 
         return consultations.stream()
                 .map(ReviewTitleResponse::of)
