@@ -101,6 +101,7 @@ public class ReviewService {
         }
     }
 
+    @Transactional
     public ReviewResponse findReview(Long reviewId, Long userId) {
         User user = CurrentUser(userId);
         Review review = reviewRepository.findById(reviewId)
