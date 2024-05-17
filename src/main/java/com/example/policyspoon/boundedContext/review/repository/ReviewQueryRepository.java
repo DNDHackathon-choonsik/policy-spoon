@@ -25,12 +25,12 @@ public class ReviewQueryRepository {
                 .fetch();
     }
 
-    public List<Review> findAll(String keyword, Long userId) {
+    public List<Review> findAll(String title, Long userId) {
         return query
                 .selectFrom(review)
                 .where(
                         review.writer.id.eq(userId)
-                                .and(review.policyTitle.like("%" + keyword + "%"))
+                                .and(review.policyTitle.like("%" + title + "%"))
                 )
                 .orderBy(review.id.desc())
                 .fetch();

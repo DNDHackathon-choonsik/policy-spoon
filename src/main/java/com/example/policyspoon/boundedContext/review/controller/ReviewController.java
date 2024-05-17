@@ -87,10 +87,10 @@ public class ReviewController {
 
     @GetMapping("/searching")
     public ResponseEntity<Result> findAll(
-            @RequestParam(name = "keyword", required = false, defaultValue = "") String keyword,
+            @RequestParam(name = "title", required = false, defaultValue = "") String title,
             @AuthenticationPrincipal User user) {
 
-        List<ReviewTitleResponse> reviews = reviewService.findAllOfReviews(keyword, user.getId());
+        List<ReviewTitleResponse> reviews = reviewService.findAllOfReviews(title, user.getId());
 
         List<Object> response = new ArrayList<>();
         response.addAll(reviews);
