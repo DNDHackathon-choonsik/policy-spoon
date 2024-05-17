@@ -34,15 +34,14 @@ public class SupplyController {
                                                @PathVariable("reviewId") Long reviewId,
                                                @AuthenticationPrincipal User user) {
 
-        SuppliesResponse response = supplyService.saveSupplies(dto, reviewId, user.getId());
+        List<SuppliesResponse> response = supplyService.saveSupplies(dto, reviewId, user.getId());
 
         return ResponseEntity.ok(Result.of(response));
     }
 
     @GetMapping
     public ResponseEntity<Result> findAll(@PathVariable("reviewId") Long reviewId, @AuthenticationPrincipal User user) {
-
-        List<Supply> response = supplyService.findAllSupplies(reviewId, user.getId());
+        List<SuppliesResponse> response = SuppliesResponse.of(supplyService.findAllSupplies(reviewId, user.getId()));
 
         return ResponseEntity.ok(Result.of(response));
     }
@@ -50,7 +49,7 @@ public class SupplyController {
     @PatchMapping
     public ResponseEntity<Result> updateSupplies(@RequestBody SuppliesRequest dto, @PathVariable("reviewId") Long reviewId, @AuthenticationPrincipal User user) {
 
-        SuppliesResponse response = supplyService.updateSupplies(dto, reviewId, user.getId());
+        List<SuppliesResponse> response = supplyService.updateSupplies(dto, reviewId, user.getId());
 
         return ResponseEntity.ok(Result.of(response));
     }

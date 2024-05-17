@@ -8,20 +8,21 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Builder
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class SuppliesRequest {
 
-    private String supplies;
+    private List<String> supplies;
 
-    public Supply toEntity(Review review, User user) {
-        return Supply.builder()
-                .review(review)
-                .supplies(this.supplies)
-                .writer(user)
-                .build();
+    public List<Supply> toEntity(Review review, User user) {
+        return supplies.stream()
+                .map(e -> Supply.builder().review(review).writer(user).supplies(e).build())
+                .collect(Collectors.toList());
     }
 
     public boolean hasSupplies() {
