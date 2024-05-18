@@ -11,12 +11,14 @@ public class ReviewTitleResponse {
     private Long id;
     private String reviewTitle;
     private String category;
+    private String content;
 
     public static ReviewTitleResponse of(Review reviews) {
         return ReviewTitleResponse.builder()
                 .id(reviews.getId())
                 .reviewTitle(reviews.getReviewTitle())
                 .category(reviews.getCategory())
+                .content(reviews.getContent())
                 .build();
     }
 
